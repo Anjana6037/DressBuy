@@ -1,5 +1,3 @@
-
-
 import 'package:ecomerseapp/pages/cart.dart';
 import 'package:ecomerseapp/pages/whishlist.dart';
 import 'package:ecomerseapp/pages/productdetail.dart';
@@ -12,18 +10,14 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class ProductListPage extends ConsumerStatefulWidget {
   const ProductListPage({super.key});
-  
-    @override
-  ConsumerState<ProductListPage> createState() =>
-      _ProductListPageState();
+
+  @override
+  ConsumerState<ProductListPage> createState() => _ProductListPageState();
 }
 
-class _ProductListPageState
-    extends ConsumerState<ProductListPage> {
-
-  final TextEditingController searchController =
-      TextEditingController();
-      final FocusNode searchfocusnode = FocusNode();
+class _ProductListPageState extends ConsumerState<ProductListPage> {
+  final TextEditingController searchController = TextEditingController();
+  final FocusNode searchfocusnode = FocusNode();
 
   @override
   void dispose() {
@@ -36,9 +30,7 @@ class _ProductListPageState
   Widget build(BuildContext context) {
     final dressAsync = ref.watch(dressProvider);
     final Scaffoldkey = GlobalKey<ScaffoldState>();
-    
-    
-  
+
     return Scaffold(
       backgroundColor: Colors.white,
       key: Scaffoldkey,
@@ -47,72 +39,93 @@ class _ProductListPageState
         child: ListView(
           children: [
             DrawerHeader(
-              decoration: BoxDecoration(color: const Color.fromARGB(255, 221, 13, 86))
-              ,child: Center(child: Text("Hi,user",style: TextStyle(color: Colors.white,fontSize: 25),))),
+              decoration: BoxDecoration(
+                color: const Color.fromARGB(255, 221, 13, 86),
+              ),
+              child: Center(
+                child: Text(
+                  "Hi,user",
+                  style: TextStyle(color: Colors.white, fontSize: 25),
+                ),
+              ),
+            ),
             ListTile(
-              leading: Icon(Icons.shopping_bag,color: const Color.fromARGB(255, 221, 13, 86)),
+              leading: Icon(
+                Icons.shopping_bag,
+                color: const Color.fromARGB(255, 221, 13, 86),
+              ),
               title: Text(
                 "Shopping Cart",
                 style: TextStyle(color: const Color.fromARGB(255, 221, 13, 86)),
               ),
-              onTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>Cart()));
-              
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Cart()),
+                );
               },
-            ),Divider(),
-             ListTile(
-              leading: Icon(Icons.person,color: const Color.fromARGB(255, 221, 13, 86)),
+            ),
+            Divider(),
+            ListTile(
+              leading: Icon(
+                Icons.person,
+                color: const Color.fromARGB(255, 221, 13, 86),
+              ),
               title: Text(
                 "Profile",
                 style: TextStyle(color: const Color.fromARGB(255, 221, 13, 86)),
               ),
-              onTap: (){
-              
-              },
-            ),Divider(),
-             ListTile(
-              leading: Icon(Icons.settings,color: const Color.fromARGB(255, 221, 13, 86)),
+              onTap: () {},
+            ),
+            Divider(),
+            ListTile(
+              leading: Icon(
+                Icons.settings,
+                color: const Color.fromARGB(255, 221, 13, 86),
+              ),
               title: Text(
                 "Settings",
                 style: TextStyle(color: const Color.fromARGB(255, 221, 13, 86)),
               ),
-              onTap: (){
-              
-              },
-            ),Divider(),
-             ListTile(
-              leading: Icon(Icons.language,color: const Color.fromARGB(255, 221, 13, 86)),
+              onTap: () {},
+            ),
+            Divider(),
+            ListTile(
+              leading: Icon(
+                Icons.language,
+                color: const Color.fromARGB(255, 221, 13, 86),
+              ),
               title: Text(
                 "Language",
                 style: TextStyle(color: const Color.fromARGB(255, 221, 13, 86)),
               ),
-              onTap: (){
-              
-              },
+              onTap: () {},
             ),
-           Divider(),
-             ListTile(
-              leading: Icon(Icons.privacy_tip_outlined,color: const Color.fromARGB(255, 221, 13, 86)),
+            Divider(),
+            ListTile(
+              leading: Icon(
+                Icons.privacy_tip_outlined,
+                color: const Color.fromARGB(255, 221, 13, 86),
+              ),
               title: Text(
                 "Privacy and Support",
                 style: TextStyle(color: const Color.fromARGB(255, 221, 13, 86)),
               ),
-              onTap: (){
-              
-              },
+              onTap: () {},
             ),
-           Divider(),
-             ListTile(
-              leading: Icon(Icons.notification_important_rounded,color: const Color.fromARGB(255, 221, 13, 86)),
+            Divider(),
+            ListTile(
+              leading: Icon(
+                Icons.notification_important_rounded,
+                color: const Color.fromARGB(255, 221, 13, 86),
+              ),
               title: Text(
                 "Notifications",
                 style: TextStyle(color: const Color.fromARGB(255, 221, 13, 86)),
               ),
-              onTap: (){
-              
-              },
-            ),Divider()
-          
+              onTap: () {},
+            ),
+            Divider(),
           ],
         ),
       ),
@@ -130,15 +143,20 @@ class _ProductListPageState
               actions: [
                 IconButton(
                   onPressed: () {
-                     Navigator.push(context, MaterialPageRoute(builder: (context)=>WishlistPage()));
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => WishlistPage()),
+                    );
                   },
                   icon: const Icon(Icons.favorite, size: 28),
                 ),
                 SizedBox(width: 2),
                 IconButton(
                   onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>Cart()));
-                   
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Cart()),
+                    );
                   },
                   icon: Icon(Icons.shopping_bag, size: 28),
                 ),
@@ -147,20 +165,21 @@ class _ProductListPageState
             ),
             Container(
               height: 65,
-              padding:EdgeInsets.symmetric(horizontal: 12,vertical: 8),
+              padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
               color: const Color.fromARGB(255, 221, 13, 86),
-           
+
               child: TextField(
                 controller: searchController,
                 focusNode: searchfocusnode,
                 autofocus: false,
                 enabled: true,
-              onChanged: (value) {
-                print("search typed:$value");
-                ref.read(searchQueryProvider.notifier).state = value.trim().toLowerCase();
-              },
+                onChanged: (value) {
+                  print("search typed:$value");
+                  ref.read(searchQueryProvider.notifier).state = value
+                      .trim()
+                      .toLowerCase();
+                },
                 decoration: InputDecoration(
-                  
                   hintText: "Search products...",
                   filled: true,
                   fillColor: Colors.white,
@@ -179,7 +198,7 @@ class _ProductListPageState
       body: CustomScrollView(
         keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.manual,
         slivers: [
-          /// 🔹 CATEGORY LIST
+         
           SliverToBoxAdapter(
             child: SizedBox(
               height: 110,
@@ -225,9 +244,7 @@ class _ProductListPageState
               ),
             ),
           ),
-           
-           
-          /// 🔹 PRODUCT GRID (API)
+
           dressAsync.when(
             loading: () => const SliverToBoxAdapter(
               child: Padding(
@@ -241,30 +258,29 @@ class _ProductListPageState
             ),
 
             data: (products) {
-             final searchQuery = ref.watch(searchQueryProvider).toLowerCase();
+              final searchQuery = ref.watch(searchQueryProvider).toLowerCase();
               final selectedcategory = ref.watch(selectedCategoryProvider);
 
-               final filteredproducts = products.where((product) {
-    final category = product.category ?? '';
-    final title = product.title?.toLowerCase() ?? '';
+              final filteredproducts = products.where((product) {
+                final category = product.category ?? '';
+                final title = product.title?.toLowerCase() ?? '';
 
-    /// 🔸 CATEGORY FILTER
-    bool categoryMatch = selectedcategory == "All" ||
-        (selectedcategory == "Men" &&
-            category.contains("men's clothing")) ||
-        (selectedcategory == "Women" &&
-            category.contains("women's clothing")) ||
-        (selectedcategory == "Electronics" &&
-            category.contains("electronics")) ||
-        (selectedcategory == "Jewelery" &&
-            category.contains("jewelery"));
+                bool categoryMatch =
+                    selectedcategory == "All" ||
+                    (selectedcategory == "Men" &&
+                        category.contains("men's clothing")) ||
+                    (selectedcategory == "Women" &&
+                        category.contains("women's clothing")) ||
+                    (selectedcategory == "Electronics" &&
+                        category.contains("electronics")) ||
+                    (selectedcategory == "Jewelery" &&
+                        category.contains("jewelery"));
 
-    /// 🔸 SEARCH FILTER
-    bool searchMatch =
-        searchQuery.isEmpty || title.contains(searchQuery);
+                bool searchMatch =
+                    searchQuery.isEmpty || title.contains(searchQuery);
 
-    return categoryMatch && searchMatch;
-  }).toList();
+                return categoryMatch && searchMatch;
+              }).toList();
               return SliverPadding(
                 padding: const EdgeInsets.all(8),
                 sliver: SliverGrid(
@@ -276,11 +292,11 @@ class _ProductListPageState
                   ),
                   delegate: SliverChildBuilderDelegate((context, index) {
                     final product = filteredproducts[index];
-                 final isWishlisted = ref.watch(
-      wishlistProvider.select(
-        (list) => list.any((item) => item.id == product.id),
-      ),
-    );
+                    final isWishlisted = ref.watch(
+                      wishlistProvider.select(
+                        (list) => list.any((item) => item.id == product.id),
+                      ),
+                    );
                     return GestureDetector(
                       onTap: () => Navigator.push(
                         context,
@@ -332,28 +348,25 @@ class _ProductListPageState
                               ),
                             ),
                           ),
-                      
+
                           Positioned(
                             bottom: 6,
                             right: 6,
-                            
 
-                            child:IconButton(
-              onPressed: () {
-                ref
-                    .read(wishlistProvider.notifier)
-                    .toggleWishlist(product);
-              },
-              icon: Icon(
-                isWishlisted
-                    ? Icons.favorite
-                    : Icons.favorite_border,
-                size: 26,
-                color: const Color.fromARGB(255, 221, 13, 86),
-              ),
-            ),
-          
-
+                            child: IconButton(
+                              onPressed: () {
+                                ref
+                                    .read(wishlistProvider.notifier)
+                                    .toggleWishlist(product);
+                              },
+                              icon: Icon(
+                                isWishlisted
+                                    ? Icons.favorite
+                                    : Icons.favorite_border,
+                                size: 26,
+                                color: const Color.fromARGB(255, 221, 13, 86),
+                              ),
+                            ),
                           ),
                         ],
                       ),
@@ -367,6 +380,4 @@ class _ProductListPageState
       ),
     );
   }
-  
- 
 }
